@@ -1,0 +1,87 @@
+
+:root {
+    --blueglow: rgb(72, 72, 199);
+}
+button {
+    width: 500px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: hsl(0 0% 15%);
+    border: none;
+    cursor: pointer;
+}
+.neons {
+    position: absolute;
+    border-radius: 15px;
+    filter: blur(7px);
+    background-color: var(--blueglow);
+    transition: all .5s ease;
+    z-index: -1;
+}
+.topneon, .botneon {
+    width: 14px;
+    height: 50%;
+    left: 243px;
+}
+.topneon {
+    top: -70%;
+}
+.botneon {
+    bottom:-70%;
+}
+.leftneon, .rightneon {
+    width: 20%;
+    height: 14px;
+    top: 68px;
+}
+.leftneon {
+    left: -30%;
+}
+.rightneon {
+    right:-30%;
+}
+svg {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+text {
+    text-shadow:
+    10px 0 20px var(--blueglow),
+    -10px 0 20px var(--blueglow),
+    0 10px 20px var(--blueglow),
+    0 -10px 20px var(--blueglow);
+    transition: all .5s ease;
+}
+button:hover text {
+    text-shadow: none;
+    stroke: black;
+}
+button:hover .topneon {
+    top: 50px;
+}
+button:hover .botneon {
+    bottom: 50px;
+}
+button:hover .leftneon {
+    left: 50px;
+}
+button:hover .rightneon {
+    right: 50px;
+}
+.neon-background {
+    position: absolute;
+    inset: 0;
+    border: 1px solid red;
+    background-color: var(--blueglow);
+    filter: blur(20px);
+    z-index: 0;
+    opacity: 0;
+    transition: opacity .5s ease .1s;
+}
+button:hover .neon-background {
+    opacity: .3;
+}
